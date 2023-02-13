@@ -57,17 +57,15 @@ export class News extends Component {
         return (
             <div className='container my-3'>
                 <h2>NewsHub - Top Headlines</h2>
-                
+               
                 <div className='row'>
-                    <div className="col-md-4">
-                    <NewsItem title="aao suru karte hai" description="my description" imageurl ="https://live-production.wcms.abc-cdn.net.au/4273843cf270710bb72e589d6c8581b3?impolicy=wcms_crop_resize&cropH=1458&cropW=2592&xPos=0&yPos=243&width=862&height=485" newsUrl = "todo"/>
+                {this.state.articles.map((element) =>  {
+                   return <div className="col-md-4" key={element.url} >
+                <NewsItem title={element.title} description= {element.description} imageurl ={element.urlToImage} newsUrl ={element.url} />
                     </div>
-                    <div className="col-md-4">
-                    <NewsItem title="aao suru karte hai" description="my description" imageurl ="https://i.ytimg.com/vi/Gx8ras-mX-M/maxresdefault.jpg"/>
-                    </div>
-                    <div className="col-md-4">
-                    <NewsItem title="aao suru karte hai" description="my description" />
-                    </div>
+
+                })}
+                    
                 </div>
             </div>
         )
