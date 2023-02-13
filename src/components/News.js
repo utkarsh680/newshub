@@ -7,7 +7,8 @@ export class News extends Component {
         super();
         this.state = {
             articles:[],
-            loading: true
+            loading: true,
+            page:1
         }
        
     }
@@ -33,6 +34,11 @@ export class News extends Component {
 
                 })}
                     
+                </div>
+                <div className='container d-flex justify-content-between my-3'>
+                <button type="button" class="btn btn-outline-dark">previous</button>
+                <button type="button" class="btn btn-outline-dark">next</button>
+
                 </div>
             </div>
         )
